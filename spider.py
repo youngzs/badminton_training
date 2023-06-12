@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
 from bs4 import BeautifulSoup
 import requests
@@ -14,7 +15,9 @@ options.add_argument('window-size=1200x600')  # Optional
 
 driver = webdriver.Chrome(chrome_options=options)
 
-for idxDoc in range(1,200):
+
+#执行到64的时候出错了，不知道原因
+for idxDoc in range(199,300):
     sUrl = f"https://h5.40dhjen.cn/catalogue?id={idxDoc}"
     response = requests.get(sUrl)
     #页面不存在跳过
@@ -24,15 +27,18 @@ for idxDoc in range(1,200):
 
     driver.get(response.url)
     driver.implicitly_wait(20) 
-
-    WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "taro-view-core.catalogue-list-item.hydrated"))
-    )
+    try:
+        WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "taro-view-core.catalogue-list-item.hydrated"))
+        )
+    except TimeoutException as e:
+        print(sUrl,"没有获取成功")
+        continue
     taro_views = driver.find_elements(By.CSS_SELECTOR, 'taro-view-core.catalogue-list-item.hydrated')
     raro_size = len(taro_views)
     title = driver.title
 
-    print("文件数量:",raro_size,"文章名：",title)
+    print("当前循环索引：",idxDoc, "\n文件数量:",raro_size,"文章名：",title)
 
     for idx in range(0,raro_size):
         txt = taro_views[idx].text
@@ -44,10 +50,18 @@ for idxDoc in range(1,200):
         # 不是具体的页面跳过
         if "catalogue" in driver.current_url:
             break
-
-        WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "taro-view-core.book-article-paragraph.hydrated"))
-        )
+        
+        try:
+            WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "taro-view-core.book-article-paragraph.hydrated"))
+            )
+        except TimeoutException as e:
+            print(driver.current_url,"没有获取成功")
+            # 返回原页面
+            driver.back()
+            driver.implicitly_wait(20)
+            taro_views = driver.find_elements(By.CSS_SELECTOR, 'taro-view-core.catalogue-list-item.hydrated')
+            continue
 
         filename = f"{title}{idx:03d}{txt}.md" 
         # 获取新页面的内容
