@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI素养培训 - 陕西省机械高级技工学院</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+            background: #f7f7f7;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide {
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            background: #fff;
+            border-radius: 20px;
+            padding: 60px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #2a5298;
+            text-shadow: none;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #4a5a6a;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #2a5298;
+        }
+        
+        p, li {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        ul li:before {
+            content: "▶ ";
+            color: #2a5298;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 1.2em;
+            color: #b3c6e0;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ffd700;
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            margin: 0 10px;
+            border: 2px solid #b3c6e0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: #f5f7fa !important;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #e0e6ef !important;
+            color: #222;
+        }
+        
+        .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .code-block {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 20px 0;
+            overflow-x: auto;
+            border: 1px solid #e0e6ef;
+            color: #2a5298;
+        }
+        
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b3c6e0;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #888;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 2px solid #b3c6e0;
+            padding: 15px;
+            text-align: left;
+            color: #222;
+        }
+        
+        th {
+            background: #f0f4ff;
+            font-weight: bold;
+        }
+        
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: 标题页 -->
+        <div class="slide active">
+            <div class="slide-number">1/40</div>
+            <div class="center-content">
+                <h1>人工智能素养培训</h1>
+                <h2>陕西省机械高级技工学院</h2>
+                <p style="font-size: 1.5em; margin-top: 40px;">汽修、数控专业教师及行政人员专场</p>
+                <p style="margin-top: 20px;">培训日期：2024年</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: AI发展历程概览 -->
+        <div class="slide">
+            <div class="slide-number">2/40</div>
+            <h1>AI发展历程</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="icon">🤖</div>
+                    <h3>1950s</h3>
+                    <p>图灵测试</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">❄️</div>
+                    <h3>1970s-80s</h3>
+                    <p>AI寒冬</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">🧠</div>
+                    <h3>2012</h3>
+                    <p>深度学习</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">💬</div>
+                    <h3>2020s</h3>
+                    <p>大语言模型</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: 图灵机与AI起源 -->
+        <div class="slide">
+            <div class="slide-number">3/40</div>
+            <h1>图灵机与AI的起源</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1950年 - 图灵测试</h3>
+                    <ul>
+                        <li>艾伦·图灵提出"机器能思考吗？"</li>
+                        <li>通过对话判断机器是否具有智能</li>
+                        <li>奠定了AI的哲学基础</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>1956年 - 达特茅斯会议</h3>
+                    <ul>
+                        <li>"人工智能"概念正式诞生</li>
+                        <li>确立AI作为独立学科</li>
+                        <li>早期研究聚焦于符号推理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: 早期AI探索 -->
+        <div class="slide">
+            <div class="slide-number">4/40</div>
+            <h1>早期AI的探索与成就</h1>
+            <ul>
+                <li><strong>1950-1960s：</strong>符号主义AI的黄金时代</li>
+                <li><strong>Logic Theorist（1956）：</strong>第一个AI程序，证明数学定理</li>
+                <li><strong>ELIZA（1966）：</strong>早期的对话系统，模拟心理治疗师</li>
+                <li><strong>期望与现实：</strong>预测"20年内机器将能做人类所有工作"</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>[ 早期AI系统架构图 ]</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: 第一次AI寒冬 -->
+        <div class="slide">
+            <div class="slide-number">5/40</div>
+            <h1>AI发展的挫折：第一次寒冬</h1>
+            <h2>1970年代 - AI遭遇瓶颈</h2>
+            <ul>
+                <li><strong>计算能力限制：</strong>当时计算机性能远不足以处理复杂问题</li>
+                <li><strong>组合爆炸问题：</strong>搜索空间随问题规模指数级增长</li>
+                <li><strong>常识推理困难：</strong>机器难以理解人类的常识知识</li>
+                <li><strong>资金撤离：</strong>政府和企业大幅削减AI研究经费</li>
+            </ul>
+            <div class="feature-card" style="margin-top: 30px;">
+                <p><strong>教训：</strong>过高的期望与技术现实之间的差距导致信任危机</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: 专家系统时代 -->
+        <div class="slide">
+            <div class="slide-number">6/40</div>
+            <h1>专家系统的兴起与局限</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1980年代复兴</h3>
+                    <ul>
+                        <li>MYCIN：医疗诊断系统</li>
+                        <li>DENDRAL：化学分析系统</li>
+                        <li>商业应用开始出现</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>第二次AI寒冬</h3>
+                    <ul>
+                        <li>知识获取瓶颈</li>
+                        <li>维护成本高昂</li>
+                        <li>缺乏学习能力</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 30px; text-align: center; font-style: italic;">
+                "专家系统证明了AI的商业价值，但也暴露了纯规则系统的根本局限"
+            </p>
+        </div>
+
+        <!-- Slide 7: 深度学习突破 -->
+        <div class="slide">
+            <div class="slide-number">7/40</div>
+            <h1>深度学习的突破性进展</h1>
+            <h2>2012年 - AI的转折点</h2>
+            <div class="feature-card">
+                <h3>ImageNet竞赛：深度学习崛起</h3>
+                <ul>
+                    <li>AlexNet以巨大优势获胜（错误率从26%降至15%）</li>
+                    <li>证明了深度神经网络的强大能力</li>
+                    <li>GPU加速使大规模训练成为可能</li>
+                </ul>
+            </div>
+            <div class="feature-grid" style="margin-top: 30px;">
+                <div class="feature-card">
+                    <h3>技术突破</h3>
+                    <ul>
+                        <li>卷积神经网络（CNN）</li>
+                        <li>反向传播算法优化</li>
+                        <li>大数据集的可用性</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>应用爆发</h3>
+                    <ul>
+                        <li>图像识别</li>
+                        <li>语音识别</li>
+                        <li>自然语言处理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: 深度学习案例 -->
+        <div class="slide">
+            <div class="slide-number">8/40</div>
+            <h1>深度学习的里程碑案例</h1>
+            <div class="timeline" style="flex-direction: column; align-items: stretch;">
+                <div class="feature-card" style="margin: 10px 0;">
+                    <h3>2016年 - AlphaGo战胜李世石</h3>
+                    <p>深度强化学习在复杂决策问题上超越人类</p>
+                </div>
+                <div class="feature-card" style="margin: 10px 0;">
+                    <h3>2017年 - Transformer架构</h3>
+                    <p>"Attention is All You Need"论文开启NLP新纪元</p>
+                </div>
+                <div class="feature-card" style="margin: 10px 0;">
+                    <h3>2018年 - BERT发布</h3>
+                    <p>预训练语言模型革命，11项NLP任务刷新纪录</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: 大语言模型原理 -->
+        <div class="slide">
+            <div class="slide-number">9/40</div>
+            <h1>大语言模型（LLM）原理</h1>
+            <h2>Transformer架构的革命性意义</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>核心创新</h3>
+                    <ul>
+                        <li>自注意力机制（Self-Attention）</li>
+                        <li>并行化处理能力</li>
+                        <li>位置编码技术</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>技术优势</h3>
+                    <ul>
+                        <li>长距离依赖建模</li>
+                        <li>训练效率大幅提升</li>
+                        <li>泛化能力强</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>
+# Transformer的核心思想
+输入文本 → Token化 → 嵌入层 → 多头注意力 → 前馈网络 → 输出预测
+
+# 关键特性
+- 端到端学习
+- 大规模预训练
+- 少样本学习能力
+                </pre>
+            </div>
+        </div>
+
+        <!-- Slide 10: GPT演进历程 -->
+        <div class="slide">
+            <div class="slide-number">10/40</div>
+            <h1>GPT系列的演进历程</h1>
+            <table>
+                <tr>
+                    <th>模型</th>
+                    <th>发布时间</th>
+                    <th>参数量</th>
+                    <th>关键特性</th>
+                </tr>
+                <tr>
+                    <td>GPT-1</td>
+                    <td>2018年</td>
+                    <td>1.17亿</td>
+                    <td>无监督预训练+有监督微调</td>
+                </tr>
+                <tr>
+                    <td>GPT-2</td>
+                    <td>2019年</td>
+                    <td>15亿</td>
+                    <td>零样本任务能力</td>
+                </tr>
+                <tr>
+                    <td>GPT-3</td>
+                    <td>2020年</td>
+                    <td>1750亿</td>
+                    <td>少样本学习，涌现能力</td>
+                </tr>
+                <tr>
+                    <td>GPT-4</td>
+                    <td>2023年</td>
+                    <td>约1.7万亿</td>
+                    <td>多模态理解，推理能力增强</td>
+                </tr>
+            </table>
+            <p style="margin-top: 20px; text-align: center;">
+                <strong>趋势：</strong>参数规模指数增长，能力边界不断扩展
+            </p>
+        </div>
+
+        <!-- Slide 11: AI对商业的影响 -->
+        <div class="slide">
+            <div class="slide-number">11/40</div>
+            <h1>AI对商业领域的革命性影响</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🛒 智能零售</h3>
+                    <ul>
+                        <li>个性化推荐系统</li>
+                        <li>动态定价策略</li>
+                        <li>库存优化管理</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🤝 客户服务</h3>
+                    <ul>
+                        <li>7×24小时智能客服</li>
+                        <li>情感分析与响应</li>
+                        <li>多语言实时翻译</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 商业决策</h3>
+                    <ul>
+                        <li>市场趋势预测</li>
+                        <li>风险评估模型</li>
+                        <li>自动化报告生成</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 精准营销</h3>
+                    <ul>
+                        <li>用户画像构建</li>
+                        <li>广告内容生成</li>
+                        <li>转化率优化</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: AI对交通的影响 -->
+        <div class="slide">
+            <div class="slide-number">12/40</div>
+            <h1>AI重塑交通运输行业</h1>
+            <div class="feature-card">
+                <h2>🚗 自动驾驶技术发展阶段</h2>
+                <ul>
+                    <li><strong>L1-L2：</strong>辅助驾驶（车道保持、自适应巡航）</li>
+                    <li><strong>L3：</strong>有条件自动驾驶（特定场景下自主驾驶）</li>
+                    <li><strong>L4：</strong>高度自动驾驶（限定区域内完全自主）</li>
+                    <li><strong>L5：</strong>完全自动驾驶（任何场景下自主驾驶）</li>
+                </ul>
+            </div>
+            <div class="feature-grid" style="margin-top: 30px;">
+                <div class="feature-card">
+                    <h3>🚦 智能交通管理</h3>
+                    <ul>
+                        <li>实时流量优化</li>
+                        <li>智能信号灯控制</li>
+                        <li>事故预警系统</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📦 物流革新</h3>
+                    <ul>
+                        <li>路线智能规划</li>
+                        <li>无人配送车</li>
+                        <li>仓储自动化</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: AI对制造业的影响 -->
+        <div class="slide">
+            <div class="slide-number">13/40</div>
+            <h1>AI赋能传统制造业转型</h1>
+            <h2 style="color: #ffd700;">特别关注：机械加工行业</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔍 智能质检系统</h3>
+                    <ul>
+                        <li>机器视觉缺陷检测</li>
+                        <li>精度达到0.01mm级别</li>
+                        <li>检测速度提升10倍</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 预测性维护</h3>
+                    <ul>
+                        <li>设备故障预警</li>
+                        <li>维护成本降低30%</li>
+                        <li>设备寿命延长20%</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 数字孪生技术</h3>
+                    <ul>
+                        <li>虚拟工厂建模</li>
+                        <li>生产流程优化</li>
+                        <li>远程监控操作</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 协作机器人</h3>
+                    <ul>
+                        <li>人机安全协作</li>
+                        <li>柔性生产线</li>
+                        <li>快速换产能力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: AI对教育的影响 -->
+        <div class="slide">
+            <div class="slide-number">14/40</div>
+            <h1>AI时代的教育变革</h1>
+            <h2>当学生会用AI，教师该做什么？</h2>
+            <div class="feature-card" style="background: rgba(255,100,100,0.2); border-color: #ff6464;">
+                <h3>⚠️ 教育面临的挑战</h3>
+                <ul>
+                    <li>学生使用AI完成作业，传统评估方式失效</li>
+                    <li>知识获取门槛降低，死记硬背价值下降</li>
+                    <li>AI生成内容的真伪识别成为新挑战</li>
+                </ul>
+            </div>
+            <div class="feature-card" style="background: rgba(100,255,100,0.2); border-color: #64ff64; margin-top: 20px;">
+                <h3>✨ 教师角色的转变</h3>
+                <ul>
+                    <li><strong>从知识传授者→学习引导者：</strong>培养批判性思维</li>
+                    <li><strong>从标准答案→创新思维：</strong>注重过程而非结果</li>
+                    <li><strong>从单向教学→个性辅导：</strong>AI辅助因材施教</li>
+                    <li><strong>从应试教育→能力培养：</strong>重视实践和创造力</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 15: 技工教育的机遇与挑战 -->
+        <div class="slide">
+            <div class="slide-number">15/40</div>
+            <h1>AI对技工教育的深远影响</h1>
+            <h2>技能要求的根本性转变</h2>
+            <table>
+                <tr>
+                    <th>传统技能</th>
+                    <th>→</th>
+                    <th>未来技能</th>
+                </tr>
+                <tr>
+                    <td>手工操作熟练度</td>
+                    <td>→</td>
+                    <td>智能设备编程与调试</td>
+                </tr>
+                <tr>
+                    <td>经验判断</td>
+                    <td>→</td>
+                    <td>数据分析与决策</td>
+                </tr>
+                <tr>
+                    <td>单一专业技能</td>
+                    <td>→</td>
+                    <td>跨学科综合能力</td>
+                </tr>
+                <tr>
+                    <td>执行标准流程</td>
+                    <td>→</td>
+                    <td>创新问题解决</td>
+                </tr>
+            </table>
+            <div class="feature-card" style="margin-top: 30px;">
+                <h3>🎓 技工院校教学改革方向</h3>
+                <ul>
+                    <li>引入AI辅助实训系统</li>
+                    <li>虚拟现实技术模拟危险操作</li>
+                    <li>项目式学习培养综合能力</li>
+                    <li>校企合作引入真实AI应用场景</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 16: 汽修专业的AI应用 -->
+        <div class="slide">
+            <div class="slide-number">16/40</div>
+            <h1>AI在汽修专业教学中的应用</h1>
+            <div class="code-block">
+                <h3>📝 教学知识点生成提示词示例</h3>
+                <pre>
+请生成一个交互式网页，展示汽车发动机活塞运动原理的3D动画演示。要求：
+1. 展示活塞在气缸内的四冲程运动过程
+2. 可以通过按钮控制动画播放速度
+3. 显示每个冲程的名称和作用
+4. 使用不同颜色标注进气、压缩、做功、排气四个过程
+5. 添加剖面视图，展示活塞环、连杆等内部结构
+6. 包含温度和压力的实时变化图表
+                </pre>
+            </div>
+            <div class="feature-grid" style="margin-top: 20px;">
+                <div class="feature-card">
+                    <h3>🔧 故障诊断AI助手</h3>
+                    <ul>
+                        <li>基于症状的智能诊断</li>
+                        <li>维修方案推荐</li>
+                        <li>历史案例匹配</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 AR维修指导</h3>
+                    <ul>
+                        <li>实时标注零部件</li>
+                        <li>步骤动画指引</li>
+                        <li>远程专家协助</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: 数控专业的AI应用 -->
+        <div class="slide">
+            <div class="slide-number">17/40</div>
+            <h1>AI在数控专业教学中的应用</h1>
+            <div class="code-block">
+                <h3>📝 数控设备教学内容生成提示词</h3>
+                <pre>
+创建一个数控车床主轴系统的动态演示网页，包含：
+1. 主轴箱内部齿轮传动系统的透视图
+2. 变速机构的工作原理动画
+3. 轴承支撑结构的细节展示
+4. 可调节转速查看不同工况下的运动状态
+5. 标注各部件名称和功能说明
+6. 添加切削力和振动分析图表
+7. 包含G代码输入区域，实时显示刀具路径
+                </pre>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>🤖 数控编程AI优化</h3>
+                <ul>
+                    <li>自动生成优化的G代码</li>
+                    <li>刀具路径智能规划</li>
+                    <li>切削参数自动优化</li>
+                    <li>加工时间和成本预估</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 18: AI生成视频说明 -->
+        <div class="slide">
+            <div class="slide-number">18/40</div>
+            <h1>AI视频生成平台使用指南</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎬 推荐平台：即梦AI</h3>
+                    <ul>
+                        <li>支持中文提示词</li>
+                        <li>10秒视频生成</li>
+                        <li>高清画质输出</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎥 备选平台：Runway</h3>
+                    <ul>
+                        <li>专业视频编辑功能</li>
+                        <li>多种AI特效</li>
+                        <li>支持视频延长</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="code-block" style="margin-top: 20px;">
+                <h3>视频生成提示词示例</h3>
+                <pre>
+场景：现代化数控车间，一名技术工人正在操作五轴加工中心
+要求：
+1. 展示设备的整体外观和操作界面
+2. 特写：刀具高速旋转切削金属的过程
+3. 显示数控系统的实时数据监控画面
+4. 工人戴着AR眼镜查看加工参数
+5. 画面清晰，光线明亮，专业感强
+时长：10秒
+                </pre>
+            </div>
+        </div>
+
+        <!-- Slide 19: 豆包录音纪要-步骤1 -->
+        <div class="slide">
+            <div class="slide-number">19/40</div>
+            <h1>豆包录音纪要使用教程</h1>
+            <h2>步骤一：打开豆包APP</h2>
+            <div class="image-placeholder" style="height: 300px;">
+                <p>[ 豆包APP主界面截图 ]</p>
+                <p>显示"录音纪要"功能入口</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>操作要点</h3>
+                <ul>
+                    <li>确保手机已安装最新版豆包APP</li>
+                    <li>在主界面找到"录音纪要"功能模块</li>
+                    <li>点击进入录音纪要功能</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 20: 豆包录音纪要-步骤2 -->
+        <div class="slide">
+            <div class="slide-number">20/40</div>
+            <h1>豆包录音纪要使用教程</h1>
+            <h2>步骤二：录音与生成纪要</h2>
+            <div class="image-placeholder" style="height: 300px;">
+                <p>[ 录音界面截图 ]</p>
+                <p>显示录音按钮和实时波形</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>使用技巧</h3>
+                <ul>
+                    <li>点击红色录音按钮开始录音</li>
+                    <li>支持最长60分钟连续录音</li>
+                    <li>录音结束后自动转文字并生成纪要</li>
+                    <li>可以编辑和导出纪要内容</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 21: 会议纪要助手-创建步骤1 -->
+        <div class="slide">
+            <div class="slide-number">21/40</div>
+            <h1>创建会议纪要AI助手</h1>
+            <h2>步骤一：访问AI平台</h2>
+            <div class="image-placeholder" style="height: 250px;">
+                <p>[ AI助手创建平台界面 ]</p>
+                <p>显示"创建助手"按钮</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>准备工作</h3>
+                <ul>
+                    <li>选择合适的AI平台（如文心一言、通义千问等）</li>
+                    <li>登录账号进入助手创建页面</li>
+                    <li>选择"自定义助手"或"创建新助手"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 22: 会议纪要助手-创建步骤2 -->
+        <div class="slide">
+            <div class="slide-number">22/40</div>
+            <h1>创建会议纪要AI助手</h1>
+            <h2>步骤二：配置助手参数</h2>
+            <div class="image-placeholder" style="height: 250px;">
+                <p>[ 助手配置界面截图 ]</p>
+                <p>显示名称、描述、提示词输入框</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>配置要点</h3>
+                <ul>
+                    <li>助手名称：会议纪要秘书</li>
+                    <li>功能描述：自动整理会议内容生成规范纪要</li>
+                    <li>输入下页的提示词模板</li>
+                    <li>测试并保存助手</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 23: 提示词工程基础 -->
+        <div class="slide">
+            <div class="slide-number">23/40</div>
+            <h1>提示词工程：三要素原则</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h2>👤 角色（Role）</h2>
+                    <p>定义AI的身份和专业背景</p>
+                    <p>例如："你是一位经验丰富的会议秘书"</p>
+                </div>
+                <div class="feature-card">
+                    <h2>📋 任务（Task）</h2>
+                    <p>明确AI需要完成的具体工作</p>
+                    <p>例如："整理会议内容生成纪要"</p>
+                </div>
+                <div class="feature-card" style="grid-column: span 2;">
+                    <h2>📐 格式（Format）</h2>
+                    <p>规定输出的结构和样式</p>
+                    <p>例如："按照标准会议纪要模板输出"</p>
+                </div>
+            </div>
+            <div class="code-block" style="margin-top: 20px;">
+                <h3>提示词公式</h3>
+                <pre>
+有效提示词 = 角色定义 + 任务描述 + 输出格式
+
+示例：
+"你是一位专业的技术文档编写专家（角色），
+请根据以下内容编写用户手册（任务），
+输出格式包括：概述、功能说明、操作步骤、注意事项（格式）"
+                </pre>
+            </div>
+        </div>
+
+        <!-- Slide 24: 会议纪要提示词模板 -->
+        <div class="slide">
+            <div class="slide-number">24/40</div>
+            <h1>会议纪要助手提示词模板</h1>
+            <div class="code-block" style="font-size: 0.85em;">
+                <pre>
+角色：你是一位经验丰富的会议秘书
+任务：根据会议录音或文字记录，整理出结构清晰的会议纪要
+格式：请按照以下Markdown格式输出：
+
+# 会议纪要
+
+## 基本信息
+- 会议时间：
+- 会议地点：
+- 参会人员：
+- 会议主持：
+- 记录人：
+
+## 会议议题
+
+## 会议内容
+### 1. [议题一]
+- 发言要点：
+- 讨论结果：
+
+### 2. [议题二]
+- 发言要点：
+- 讨论结果：
+
+## 会议决议
+1. 
+2. 
+
+## 后续行动计划
+| 任务事项 | 负责人 | 完成时限 |
+|---------|--------|----------|
+|         |        |          |
+
+## 下次会议安排
+                </pre>
+            </div>
+        </div>
+
+        <!-- Slide 25: 学生简历优化-BOSS直聘 -->
+        <div class="slide">
+            <div class="slide-number">25/40</div>
+            <h1>AI助力学生简历优化</h1>
+            <h2>BOSS直聘AI功能介绍</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🤖 AI简历诊断</h3>
+                    <ul>
+                        <li>自动分析简历完整度</li>
+                        <li>关键词匹配度评分</li>
+                        <li>行业竞争力分析</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>✨ AI简历优化</h3>
+                    <ul>
+                        <li>智能改写工作经历</li>
+                        <li>突出技能亮点</li>
+                        <li>匹配岗位要求</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-placeholder" style="margin-top: 20px;">
+                <p>[ BOSS直聘AI简历助手界面截图 ]</p>
+            </div>
+        </div>
+
+        <!-- Slide 26: 满分简历平台介绍 -->
+        <div class="slide">
+            <div class="slide-number">26/40</div>
+            <h1>满分简历平台使用指南</h1>
+            <div class="feature-card">
+                <h3>🎯 平台特色功能</h3>
+                <ul>
+                    <li><strong>智能模板推荐：</strong>根据求职岗位推荐最适合的简历模板</li>
+                    <li><strong>AI内容优化：</strong>一键优化经历描述，使用STAR法则</li>
+                    <li><strong>关键词提取：</strong>自动提取招聘信息关键词并匹配</li>
+                    <li><strong>简历评分：</strong>多维度评估简历质量</li>
+                </ul>
+            </div>
+            <div class="feature-grid" style="margin-top: 20px;">
+                <div class="feature-card">
+                    <h3>使用步骤</h3>
+                    <ul>
+                        <li>1. 选择目标岗位</li>
+                        <li>2. 填写基本信息</li>
+                        <li>3. AI优化建议</li>
+                        <li>4. 下载完成简历</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>优化要点</h3>
+                    <ul>
+                        <li>量化工作成果</li>
+                        <li>使用行动动词</li>
+                        <li>突出专业技能</li>
+                        <li>简洁有力表达</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 27: 豆包面试官-功能介绍 -->
+        <div class="slide">
+            <div class="slide-number">27/40</div>
+            <h1>豆包智能体：AI面试官</h1>
+            <h2>功能特点与使用场景</h2>
+            <div class="feature-card">
+                <h3>🎭 AI面试官核心功能</h3>
+                <ul>
+                    <li><strong>模拟真实面试：</strong>根据岗位定制面试问题</li>
+                    <li><strong>实时反馈：</strong>对回答进行专业点评</li>
+                    <li><strong>压力面试训练：</strong>提升应变能力</li>
+                    <li><strong>面试复盘：</strong>提供改进建议</li>
+                </ul>
+            </div>
+            <div class="feature-grid" style="margin-top: 20px;">
+                <div class="feature-card">
+                    <h3>📱 适用人群</h3>
+                    <ul>
+                        <li>应届毕业生</li>
+                        <li>转行求职者</li>
+                        <li>面试经验不足者</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>💡 训练内容</h3>
+                    <ul>
+                        <li>自我介绍优化</li>
+                        <li>专业问题应答</li>
+                        <li>行为面试技巧</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 28: 豆包面试官-操作步骤1 -->
+        <div class="slide">
+            <div class="slide-number">28/40</div>
+            <h1>豆包面试官使用教程</h1>
+            <h2>步骤一：进入智能体市场</h2>
+            <div class="image-placeholder" style="height: 300px;">
+                <p>[ 豆包APP智能体市场界面 ]</p>
+                <p>搜索"面试官"或"面试助手"</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>操作指引</h3>
+                <ul>
+                    <li>打开豆包APP，点击"智能体"标签</li>
+                    <li>在搜索框输入"面试官"</li>
+                    <li>选择官方或高评分的面试官智能体</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 29: 豆包面试官-操作步骤2 -->
+        <div class="slide">
+            <div class="slide-number">29/40</div>
+            <h1>豆包面试官使用教程</h1>
+            <h2>步骤二：开始模拟面试</h2>
+            <div class="image-placeholder" style="height: 250px;">
+                <p>[ 面试设置界面截图 ]</p>
+                <p>选择岗位类型、面试难度等</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>面试设置</h3>
+                <ul>
+                    <li>选择目标岗位（如：汽车维修技师、数控操作员）</li>
+                    <li>设置面试轮次（初试/复试/终试）</li>
+                    <li>选择面试风格（温和/标准/压力）</li>
+                    <li>上传简历获得定制化问题</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 30: 面试官提示词模板 -->
+        <div class="slide">
+            <div class="slide-number">30/40</div>
+            <h1>AI面试官提示词模板</h1>
+            <div class="code-block" style="font-size: 0.9em;">
+                <pre>
+角色：你是一位资深的企业HR面试官，负责技工类岗位的招聘面试
+任务：对应聘者进行专业的面试问答，评估其技能水平和岗位匹配度
+要求：
+1. 根据应聘岗位（汽修/数控）设计针对性问题
+2. 从技能、经验、学习能力、团队合作等维度评估
+3. 给出专业的面试反馈和改进建议
+4. 模拟真实面试场景，保持专业但友好的语气
+
+面试流程：
+1. 开场：自我介绍（限时2分钟）
+2. 专业技能考察（3-4个问题）
+3. 工作经验了解（2-3个问题）
+4. 情境模拟题（1-2个场景）
+5. 个人发展规划
+6. 反向提问环节
+
+评估标准：
+- 专业知识掌握度（40%）
+- 实践经验丰富度（30%）
+- 沟通表达能力（20%）
+- 学习成长潜力（10%）
+                </pre>
+            </div>
+        </div>
+
+        <!-- Slide 31: 技工院校AI教学改革建议 -->
+        <div class="slide">
+            <div class="slide-number">31/40</div>
+            <h1>技工院校AI时代教学改革建议</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎓 课程体系升级</h3>
+                    <ul>
+                        <li>增设AI基础课程</li>
+                        <li>传统课程融入AI元素</li>
+                        <li>跨学科项目设计</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 实训环境改造</h3>
+                    <ul>
+                        <li>引进智能制造设备</li>
+                        <li>建设虚拟仿真实训室</li>
+                        <li>搭建AI实验平台</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>👨‍🏫 师资能力提升</h3>
+                    <ul>
+                        <li>教师AI技能培训</li>
+                        <li>教学方法创新</li>
+                        <li>产教融合深化</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 评价体系改革</h3>
+                    <ul>
+                        <li>过程性评价比重增加</li>
+                        <li>实践能力考核强化</li>
+                        <li>创新思维评估</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="feature-card" style="margin-top: 20px; background: rgba(255,215,0,0.2);">
+                <h3>🌟 核心理念转变</h3>
+                <p>从"学会操作"到"学会学习"，从"掌握技能"到"创新应用"</p>
+            </div>
+        </div>
+
+        <!-- Slide 32: 学生技能发展路径 -->
+        <div class="slide">
+            <div class="slide-number">32/40</div>
+            <h1>AI时代学生技能发展路径</h1>
+            <h2>从传统技工到智能时代技术人才</h2>
+            <table>
+                <tr>
+                    <th>阶段</th>
+                    <th>传统路径</th>
+                    <th>AI时代路径</th>
+                </tr>
+                <tr>
+                    <td>基础阶段</td>
+                    <td>工具使用、基本操作</td>
+                    <td>数字素养、AI工具基础</td>
+                </tr>
+                <tr>
+                    <td>技能阶段</td>
+                    <td>专业技能、熟练操作</td>
+                    <td>人机协作、数据分析</td>
+                </tr>
+                <tr>
+                    <td>进阶阶段</td>
+                    <td>经验积累、问题解决</td>
+                    <td>系统思维、创新设计</td>
+                </tr>
+                <tr>
+                    <td>专家阶段</td>
+                    <td>技术专家、传帮带</td>
+                    <td>AI应用专家、解决方案设计</td>
+                </tr>
+            </table>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>🚀 关键能力培养</h3>
+                <ul>
+                    <li><strong>技术融合能力：</strong>将AI技术与专业技能深度结合</li>
+                    <li><strong>持续学习能力：</strong>适应快速变化的技术环境</li>
+                    <li><strong>创新思维能力：</strong>利用AI工具创造性解决问题</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 33: 实践案例分享 -->
+        <div class="slide">
+            <div class="slide-number">33/40</div>
+            <h1>AI教学实践案例分享</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🚗 汽修专业案例</h3>
+                    <h4>项目：智能故障诊断系统开发</h4>
+                    <ul>
+                        <li>学生收集故障案例数据</li>
+                        <li>训练AI识别故障模式</li>
+                        <li>开发诊断辅助APP</li>
+                        <li>实车测试验证</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🏭 数控专业案例</h3>
+                    <h4>项目：加工参数优化AI</h4>
+                    <ul>
+                        <li>采集加工过程数据</li>
+                        <li>建立参数优化模型</li>
+                        <li>对比测试效果</li>
+                        <li>形成标准化方案</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="feature-card" style="margin-top: 20px; background: rgba(100,255,100,0.2);">
+                <h3>✅ 项目成果</h3>
+                <ul>
+                    <li>学生就业竞争力提升40%</li>
+                    <li>企业合作意向增加60%</li>
+                    <li>创新创业项目孵化5个</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 34: 未来展望 -->
+        <div class="slide">
+            <div class="slide-number">34/40</div>
+            <h1>展望：AI与职业教育的未来</h1>
+            <div class="timeline" style="flex-direction: column; align-items: stretch;">
+                <div class="feature-card" style="margin: 10px 0;">
+                    <h3>2024-2025：AI工具普及期</h3>
+                    <p>基础AI工具在教学中广泛应用，师生AI素养快速提升</p>
+                </div>
+                <div class="feature-card" style="margin: 10px 0;">
+                    <h3>2025-2027：深度融合期</h3>
+                    <p>AI深度融入专业课程，虚拟实训成为标配</p>
+                </div>
+                <div class="feature-card" style="margin: 10px 0;">
+                    <h3>2027-2030：创新突破期</h3>
+                    <p>学生成为AI应用创新者，新型技能人才大量涌现</p>
+                </div>
+            </div>
+            <div class="feature-card" style="margin-top: 20px; background: rgba(255,215,0,0.3);">
+                <h3>🎯 我们的使命</h3>
+                <p>培养既懂传统技能、又掌握AI技术的复合型技术人才，
+                让每一位学生都能在智能时代找到自己的位置和价值！</p>
+            </div>
+        </div>
+
+        <!-- Slide 35: 行动计划 -->
+        <div class="slide">
+            <div class="slide-number">35/40</div>
+            <h1>立即行动：AI转型实施步骤</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📅 第一阶段（1-3个月）</h3>
+                    <h4>意识觉醒</h4>
+                    <ul>
+                        <li>全员AI基础培训</li>
+                        <li>建立AI学习小组</li>
+                        <li>尝试基础AI工具</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 第二阶段（3-6个月）</h3>
+                    <h4>能力建设</h4>
+                    <ul>
+                        <li>专业AI应用培训</li>
+                        <li>试点AI教学项目</li>
+                        <li>收集反馈优化</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 第三阶段（6-12个月）</h3>
+                    <h4>全面推广</h4>
+                    <ul>
+                        <li>AI融入日常教学</li>
+                        <li>开发校本AI课程</li>
+                        <li>建立评估体系</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 第四阶段（12个月后）</h3>
+                    <h4>持续创新</h4>
+                    <ul>
+                        <li>形成AI教学特色</li>
+                        <li>输出最佳实践</li>
+                        <li>引领行业发展</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 36: 资源推荐 -->
+        <div class="slide">
+            <div class="slide-number">36/40</div>
+            <h1>学习资源推荐</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📚 基础学习平台</h3>
+                    <ul>
+                        <li>百度飞桨AI Studio</li>
+                        <li>阿里云天池学习</li>
+                        <li>华为云AI学院</li>
+                        <li>网易云课堂AI专区</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🛠️ 实用AI工具</h3>
+                    <ul>
+                        <li>文心一言（百度）</li>
+                        <li>通义千问（阿里）</li>
+                        <li>讯飞星火</li>
+                        <li>豆包（字节）</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📖 推荐书籍</h3>
+                    <ul>
+                        <li>《人工智能简史》</li>
+                        <li>《智能时代》</li>
+                        <li>《AI思维》</li>
+                        <li>《深度学习入门》</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🌐 社区资源</h3>
+                    <ul>
+                        <li>GitHub AI项目</li>
+                        <li>知乎AI话题</li>
+                        <li>B站AI教程</li>
+                        <li>职教AI联盟</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 37: 常见问题解答 -->
+        <div class="slide">
+            <div class="slide-number">37/40</div>
+            <h1>常见问题解答</h1>
+            <div class="feature-card">
+                <h3>❓ AI会取代技工吗？</h3>
+                <p>不会。AI是工具，需要人来操作和决策。未来是人机协作的时代，
+                掌握AI的技工将更有竞争力。</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>❓ 年龄大的教师如何适应？</h3>
+                <p>从简单工具开始，循序渐进。重点是转变观念，不需要成为技术专家，
+                而是学会利用AI提升教学效果。</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>❓ 学校资金有限怎么办？</h3>
+                <p>很多AI工具都有免费版本，可以先从免费资源开始。同时可以申请
+                教育优惠、寻求企业合作等方式获得支持。</p>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>❓ 如何保证教学质量？</h3>
+                <p>AI是辅助而非替代。关键是教师要把控方向，确保AI生成内容的
+                准确性，培养学生的批判性思维。</p>
+            </div>
+        </div>
+
+        <!-- Slide 38: 互动环节设计 -->
+        <div class="slide">
+            <div class="slide-number">38/40</div>
+            <h1>现场互动环节</h1>
+            <div class="feature-card">
+                <h3>🎯 实操体验（30分钟）</h3>
+                <ul>
+                    <li><strong>汽修组：</strong>使用AI生成发动机原理动画</li>
+                    <li><strong>数控组：</strong>用AI优化G代码程序</li>
+                    <li><strong>行政组：</strong>创建会议纪要AI助手</li>
+                </ul>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>💡 小组讨论（20分钟）</h3>
+                <ul>
+                    <li>讨论主题：如何在自己的工作中应用今天学到的AI工具？</li>
+                    <li>每组选出一个最有创意的应用场景</li>
+                    <li>各组分享交流（每组3分钟）</li>
+                </ul>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;">
+                <h3>🏆 成果展示</h3>
+                <p>评选最佳AI应用创意奖，获奖小组将获得AI学习资源包</p>
+            </div>
+        </div>
+
+        <!-- Slide 39: 培训总结 -->
+        <div class="slide">
+            <div class="slide-number">39/40</div>
+            <h1>培训总结</h1>
+            <div class="center-content">
+                <h2>今天我们学习了：</h2>
+                <div class="feature-grid" style="margin-top: 30px;">
+                    <div class="feature-card">
+                        <h3>🧠 AI基础知识</h3>
+                        <p>发展历程、技术原理、应用现状</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔧 专业应用</h3>
+                        <p>汽修、数控的AI工具使用</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💼 行政效率</h3>
+                        <p>会议纪要、简历优化、面试准备</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🚀 未来规划</h3>
+                        <p>教学改革方向、实施路径</p>
+                    </div>
+                </div>
+                <div class="feature-card" style="margin-top: 30px; background: rgba(255,215,0,0.3);">
+                    <h2>核心理念</h2>
+                    <p style="font-size: 1.5em;">AI不是威胁，而是机遇。<br>
+                    掌握AI的人不会被取代，<br>
+                    不掌握AI的人才会被取代。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 40: 结束页 -->
+        <div class="slide">
+            <div class="slide-number">40/40</div>
+            <div class="center-content">
+                <h1>谢谢大家！</h1>
+                <h2 style="margin-top: 40px;">让我们一起拥抱AI时代</h2>
+                <h2>共创职业教育新未来！</h2>
+                <div class="feature-card" style="margin-top: 60px;">
+                    <h3>📧 后续支持</h3>
+                    <p>培训材料和AI工具清单将通过邮件发送</p>
+                    <p>建立AI学习交流群，持续分享最新资源</p>
+                    <p>每月组织一次AI应用案例分享会</p>
+                </div>
+                <p style="margin-top: 40px; font-size: 1.2em;">
+                    扫描二维码加入<br>
+                    "陕西机械技工AI学习群"
+                </p>
+                <div class="image-placeholder" style="width: 200px; height: 200px; margin: 20px auto;">
+                    <p>[ 二维码 ]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 40;
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            slides[currentSlide - 1].classList.add('active');
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') changeSlide(-1);
+            if (event.key === 'ArrowRight') changeSlide(1);
+            if (event.key === 'Home') goToSlide(1);
+            if (event.key === 'End') goToSlide(totalSlides);
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
