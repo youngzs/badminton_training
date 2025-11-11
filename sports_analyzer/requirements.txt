@@ -1,0 +1,39 @@
+# Core dependencies
+opencv-python==4.9.0.80
+mediapipe==0.10.9
+numpy==1.26.3
+scipy==1.12.0
+
+# Web framework
+fastapi==0.109.0
+uvicorn==0.27.0
+websockets==12.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.25
+asyncpg==0.29.0
+redis==5.0.1
+
+# ML/AI
+tensorflow==2.15.0
+torch==2.1.2
+torchvision==0.16.2
+scikit-learn==1.4.0
+
+# Video processing
+moviepy==1.0.3
+pillow==10.2.0
+
+# Utils
+pydantic==2.5.3
+python-jose==3.3.0
+passlib==1.7.4
+python-dotenv==1.0.0
+aiofiles==23.2.1
+
+# Development
+pytest==7.4.4
+pytest-asyncio==0.23.3
+black==23.12.1
+flake8==7.0.0
